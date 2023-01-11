@@ -8,7 +8,7 @@ public class TheMainGallows {
 
 
     public void mainMaps() {
-        System.out.println("                _____" +
+        System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n                     |" +
                 "\n                     |" +
@@ -16,42 +16,42 @@ public class TheMainGallows {
     }
 
     public void mainMapsSecond() {
-        System.out.println("                _____" +
+        System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n                     |" +
                 "\n                 _______");
     }
     public void mainMapsThree() {
-        System.out.println("                _____" +
+        System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n               |     |" +
                 "\n                 _______");
     }
     public void mainMapsFor() {
-        System.out.println("                _____" +
+        System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n               |     |" +
                 "\n              /  _______");
     }
     public void mainMapsFive() {
-        System.out.println("                _____" +
+        System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n               |     |" +
                 "\n              / \\ _______");
     }
     public void mainMapsSix() {
-        System.out.println("                _____" +
+        System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n              /|     |" +
                 "\n              / \\ _______");
     }
     public void mainMapsSeven() {
-        System.out.println("                _____" +
+        System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n              /|\\    |" +
