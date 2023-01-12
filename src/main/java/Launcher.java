@@ -1,5 +1,7 @@
-import java.util.Arrays;
+
+import java.util.Random;
 import java.util.Scanner;
+
 
 /**
  * @author Evgeniy_Tyslevich
@@ -16,83 +18,93 @@ public class Launcher {
 
     // Количество букв преоброзуется в число и записывается в временную переменную
     public static int TIMES_INT = chars.length;
+    public static StringBuilder secondString = new StringBuilder();
+    public static boolean isFalse = false;
+    public static String s = "";
 
     public static void main(String[] args) {
 
+        // Создание двух объектов, классов, Scanner и TheMainGallows
+
         TheMainGallows theMainGallows = new TheMainGallows();
+        Scanner scanner = new Scanner(System.in);
+
+        char firstNumb;
         theMainGallows.mainMaps();
+
+        for (int i = 0; i < TIMES_INT; i++) {
+            secondString.append('_');
+            s = secondString.toString();
+        }
 
         while (true) {
 
-            // Создание трех объектов, классов Slovar, Scanner и TheMainGallows
-            Slovar slovar_new = new Slovar();
+            extractedErrors();
 
-            Scanner scanner = new Scanner(System.in);
+            System.out.print("\nСлово: " + s);
+            System.out.print("\nБуква: ");
 
-
-            boolean isFalse = false;
-            char firstNumb;
-
-
-//        Рисуется "_" по количеству в переменной - TIMES_INT
-            System.out.print("\nСлово: " + getBuilder());
-
-            //Вывод количества ошибок, которые допустил игрок
-            System.out.println("\nОшибки: (" + error + ")");
-
-            System.out.print("Буква: ");
             firstNumb = scanner.next().toUpperCase().charAt(0);
 
-            //Проверка на наличие буквы, в массиве символов
-            for (int y = 0; y < chars.length; y++) {
+            isFalse = isaBoolean(isFalse, firstNumb);
 
-                if (chars[y] == firstNumb) {
-                    isFalse = true;
+            ResultErrorsMethod(isFalse);
 
-                }
-            }
-
-
-            if (!isFalse) {
-                error++;
-            }
-
-            if (error == 1) {
-                theMainGallows.mainMapsSecond();
-            }
-            if (error == 2) {
-                theMainGallows.mainMapsThree();
-            }
-            if (error == 3) {
-                theMainGallows.mainMapsFor();
-            }
-            if (error == 4) {
-                theMainGallows.mainMapsFive();
-            }
-            if (error == 5) {
-                theMainGallows.mainMapsSix();
-            }
-            if (error == 6) {
-                theMainGallows.mainMapsSeven();
-                System.out.println("КОНЕЦ ИГРЫ");
-                break;
-            }
+            CheckingChoose(theMainGallows);
         }
-
-
     }
 
-    public static StringBuilder getBuilder() {
-        StringBuilder secondString = new StringBuilder();
-        for (int i = 1; i <= TIMES_INT; i++) {
-            secondString.append("_").append(" ");
+    private static boolean isaBoolean(boolean isFalse, char firstNumb) {
+        //Проверка на наличие буквы, в массиве символов
+        for (int y = 0; y < chars.length; y++) {
+            if (chars[y] == firstNumb) {
+                isFalse = true;
+                secondString.replace(y, y, String.valueOf(firstNumb));
+                s = secondString.toString();
+            }
+            break;
         }
-        return secondString;
+        return isFalse;
+    }
+
+    private static void ResultErrorsMethod(boolean isFalse) {
+        if (!isFalse) {
+            error++;
+        }
+    }
+
+    private static void CheckingChoose(TheMainGallows theMainGallows) {
+        if (error == 1) {
+            theMainGallows.mainMapsSecond();
+        }
+        if (error == 2) {
+            theMainGallows.mainMapsThree();
+        }
+        if (error == 3) {
+            theMainGallows.mainMapsFor();
+        }
+        if (error == 4) {
+            theMainGallows.mainMapsFive();
+        }
+        if (error == 5) {
+            theMainGallows.mainMapsSix();
+        }
+        if (error == 6) {
+            theMainGallows.mainMapsSeven();
+            System.out.println("КОНЕЦ ИГРЫ");
+            System.exit(0);
+        }
+    }
+
+    //Вывод количества ошибок, которые допустил игрок
+    private static void extractedErrors() {
+        System.out.println("\nОшибки: (" + error + ")");
     }
 
     private static char[] getChars() {
-        int n = (int) Math.floor(Math.random() * Slovar.slovar.length);
-        char[] chars = Slovar.slovar[n].toUpperCase().toCharArray();
+        Random random = new Random();
+        int pos = random.nextInt(Slovar.slovar.length);
+        char[] chars = Slovar.slovar[pos].toUpperCase().toCharArray();
         return chars;
     }
 }

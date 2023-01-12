@@ -4,9 +4,6 @@
  */
 public class TheMainGallows {
 
-    //Было принято решение, пожертвовать оптимизацией, и воспользоваться самым легким способом
-
-
     public void mainMaps() {
         System.out.println("\n                _____" +
                 "\n               |     |" +

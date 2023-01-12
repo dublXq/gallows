@@ -3,5 +3,5 @@
  * @link https://github.com/dublXq
  */
 public class Slovar {
-    static String[] slovar = new String[]{"Человек", "Воробей", "Подлокотник", "Скворечник", "Комбинация", "Клавиатура"};
+    static String[] slovar = new String[]{"Автовокзал", "Выносливый", "Разноречие", "Подлокотник", "Скворечник", "Комбинация", "Клавиатура"};
 }
