@@ -62,7 +62,6 @@ public class Launcher {
                 secondString.replace(y, y, String.valueOf(firstNumb));
                 s = secondString.toString();
             }
-            break;
         }
         return isFalse;
     }
