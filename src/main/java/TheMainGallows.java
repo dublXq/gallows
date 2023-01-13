@@ -9,7 +9,7 @@ public class TheMainGallows {
                 "\n               |     |" +
                 "\n                     |" +
                 "\n                     |" +
-                "\n                 _______");
+                "\n                 _______\n");
     }
 
     public void mainMapsSecond() {
@@ -17,41 +17,41 @@ public class TheMainGallows {
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n                     |" +
-                "\n                 _______");
+                "\n                 _______\n");
     }
     public void mainMapsThree() {
         System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n               |     |" +
-                "\n                 _______");
+                "\n                 _______\n");
     }
     public void mainMapsFor() {
         System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n               |     |" +
-                "\n              /  _______");
+                "\n              /  _______\n");
     }
     public void mainMapsFive() {
         System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n               |     |" +
-                "\n              / \\ _______");
+                "\n              / \\ _______\n");
     }
     public void mainMapsSix() {
         System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n              /|     |" +
-                "\n              / \\ _______");
+                "\n              / \\ _______\n");
     }
     public void mainMapsSeven() {
         System.out.println("\n                _____" +
                 "\n               |     |" +
                 "\n               o     |" +
                 "\n              /|\\    |" +
-                "\n              / \\ _______");
+                "\n              / \\ _______\n");
     }
 }
