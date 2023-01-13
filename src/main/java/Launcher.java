@@ -2,7 +2,6 @@
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
-import java.util.Random;
 import java.util.Scanner;
 
 
@@ -39,25 +38,36 @@ public class Launcher {
             s = secondString.toString();
         }
 
-        while (true) {
+        System.out.print("Приветствую! Готовы сыграть в игру?\n1.Да\n2.Нет\nОтвет: ");
+        int f = new Scanner(System.in).nextInt();
+        if (f == 1){
+            while (true) {
 
-            boolean isFalse = false;
-            System.out.print("Слово: " + s + "\n");
-            ResultErrors.extractedErrors();
-            System.out.print("Буква: ");
+                boolean isFalse = false;
+                System.out.print("Слово: " + s + "\n");
+                ResultErrors.extractedErrors();
+                System.out.print("Буква: ");
 
-            firstNumb = scanner.next().toUpperCase().charAt(0);
+                firstNumb = scanner.next().toUpperCase().charAt(0);
 
-            isFalse = DifferentActivity.isaBoolean(isFalse, firstNumb);
+                isFalse = DifferentActivity.isaBoolean(isFalse, firstNumb);
 
-            ResultErrors.ResultErrorsMethod(isFalse);
+                ResultErrors.ResultErrorsMethod(isFalse);
 
-            Check.CheckingChoose(theMainGallows);
+                Check.CheckingChoose(theMainGallows);
 
-            if (!s.contains("_")){
-                System.out.println("ПОБЕДА! ПОЗДРАВЛЯЕМ!");
-                return;
+                if (!s.contains("_")) {
+                    System.out.println("ПОБЕДА! ПОЗДРАВЛЯЕМ!");
+                    Desktop.getDesktop().browse(URI.create("https://i.gifer.com/9cND.gif"));
+                   return;
+                }
             }
+        } else if (f == 2) {
+            System.out.println("Чтобы начать игру, нажмите - 1");
+            System.exit(1);
+        } else {
+            System.out.println("Такого варианта не существует! Повторите попытку...");
+            System.exit(2);
         }
     }
 }
