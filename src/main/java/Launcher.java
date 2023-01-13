@@ -39,19 +39,21 @@ public class Launcher {
 
         while (true) {
 
-            extractedErrors();
+            System.out.print("Слово: " + s + "\n");
+           extractedErrors();
+            System.out.print("Буква: ");
 
-            System.out.print("\nСлово: " + s);
-            System.out.print("\nБуква: ");
-
-            firstNumb = scanner.next().toUpperCase().charAt(0);
-
+       firstNumb = scanner.next().toUpperCase().charAt(0);
+//        StringBuilder stringBuilder = new StringBuilder();
+//        stringBuilder.append("oao");
+//        stringBuilder.deleteCharAt(0).append("X");
+//        System.out.println(stringBuilder.toString());
             isFalse = isaBoolean(isFalse, firstNumb);
 
             ResultErrorsMethod(isFalse);
 
             CheckingChoose(theMainGallows);
-        }
+       }
     }
 
     private static boolean isaBoolean(boolean isFalse, char firstNumb) {
@@ -59,7 +61,7 @@ public class Launcher {
         for (int y = 0; y < chars.length; y++) {
             if (chars[y] == firstNumb) {
                 isFalse = true;
-                secondString.replace(y, y, String.valueOf(firstNumb));
+                secondString.replace(y, y+1, String.valueOf(firstNumb));
                 s = secondString.toString();
             }
         }
@@ -97,7 +99,7 @@ public class Launcher {
 
     //Вывод количества ошибок, которые допустил игрок
     private static void extractedErrors() {
-        System.out.println("\nОшибки: (" + error + ")");
+        System.out.println("Ошибки: (" + error + ")");
     }
 
     private static char[] getChars() {
