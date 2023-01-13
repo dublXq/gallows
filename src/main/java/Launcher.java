@@ -1,4 +1,7 @@
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,15 +17,14 @@ public class Launcher {
     public static int error;
 
     // Слово преоброзуется в массив букв
-    public static char[] chars = getChars();
+    public static char[] chars = Wordbook.getChars();
 
     // Количество букв преоброзуется в число и записывается в временную переменную
     public static int TIMES_INT = chars.length;
     public static StringBuilder secondString = new StringBuilder();
-    public static boolean isFalse = false;
     public static String s = "";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // Создание двух объектов, классов, Scanner и TheMainGallows
 
@@ -39,73 +41,23 @@ public class Launcher {
 
         while (true) {
 
+            boolean isFalse = false;
             System.out.print("Слово: " + s + "\n");
-           extractedErrors();
+            ResultErrors.extractedErrors();
             System.out.print("Буква: ");
 
-       firstNumb = scanner.next().toUpperCase().charAt(0);
-//        StringBuilder stringBuilder = new StringBuilder();
-//        stringBuilder.append("oao");
-//        stringBuilder.deleteCharAt(0).append("X");
-//        System.out.println(stringBuilder.toString());
-            isFalse = isaBoolean(isFalse, firstNumb);
+            firstNumb = scanner.next().toUpperCase().charAt(0);
 
-            ResultErrorsMethod(isFalse);
+            isFalse = DifferentActivity.isaBoolean(isFalse, firstNumb);
 
-            CheckingChoose(theMainGallows);
-       }
-    }
+            ResultErrors.ResultErrorsMethod(isFalse);
 
-    private static boolean isaBoolean(boolean isFalse, char firstNumb) {
-        //Проверка на наличие буквы, в массиве символов
-        for (int y = 0; y < chars.length; y++) {
-            if (chars[y] == firstNumb) {
-                isFalse = true;
-                secondString.replace(y, y+1, String.valueOf(firstNumb));
-                s = secondString.toString();
+            Check.CheckingChoose(theMainGallows);
+
+            if (!s.contains("_")){
+                System.out.println("ПОБЕДА! ПОЗДРАВЛЯЕМ!");
+                return;
             }
         }
-        return isFalse;
-    }
-
-    private static void ResultErrorsMethod(boolean isFalse) {
-        if (!isFalse) {
-            error++;
-        }
-    }
-
-    private static void CheckingChoose(TheMainGallows theMainGallows) {
-        if (error == 1) {
-            theMainGallows.mainMapsSecond();
-        }
-        if (error == 2) {
-            theMainGallows.mainMapsThree();
-        }
-        if (error == 3) {
-            theMainGallows.mainMapsFor();
-        }
-        if (error == 4) {
-            theMainGallows.mainMapsFive();
-        }
-        if (error == 5) {
-            theMainGallows.mainMapsSix();
-        }
-        if (error == 6) {
-            theMainGallows.mainMapsSeven();
-            System.out.println("КОНЕЦ ИГРЫ");
-            System.exit(0);
-        }
-    }
-
-    //Вывод количества ошибок, которые допустил игрок
-    private static void extractedErrors() {
-        System.out.println("Ошибки: (" + error + ")");
-    }
-
-    private static char[] getChars() {
-        Random random = new Random();
-        int pos = random.nextInt(Slovar.slovar.length);
-        char[] chars = Slovar.slovar[pos].toUpperCase().toCharArray();
-        return chars;
     }
 }
