@@ -14,7 +14,6 @@ public class Launcher {
 
     // Количество ошибок
     public static int error;
-
     // Слово преобразуется в массив букв
     public static char[] chars = Wordbook.getChars();
 
@@ -31,7 +30,7 @@ public class Launcher {
         TheMainGallows theMainGallows = new TheMainGallows();
         Scanner scanner = new Scanner(System.in);
 
-        char firstNumb;
+        char firstNumb = ' ';
         theMainGallows.mainMaps();
 
         for (int i = 0; i < TIMES_INT; i++) {
@@ -44,7 +43,6 @@ public class Launcher {
         if (numbChoose == 1) {
 
             while (true) {
-
 
                 boolean isFalse = false;
                 System.out.print("Слово: " + s + "\n");
@@ -59,6 +57,8 @@ public class Launcher {
                         checkWordEng = true;
                     }
                 }
+
+                ResultErrors.CheckForDoubleSymbol(firstNumb);
 
                 isFalse = DifferentActivity.isaBoolean(isFalse, firstNumb);
 

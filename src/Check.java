@@ -1,8 +1,6 @@
 import java.awt.*;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URI;
-import java.util.Arrays;
 
 /**
  * @author Evgeniy_Tyslevich

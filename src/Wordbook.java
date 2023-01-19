@@ -1,7 +1,3 @@
-import java.awt.*;
-import java.io.IOException;
-import java.net.URI;
-import java.util.Deque;
 import java.util.Random;
 
 /**
@@ -10,8 +6,7 @@ import java.util.Random;
  */
 public class Wordbook extends Launcher {
 
-    static char[] wordBookEng = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Y', 'Z' };
-
+    static char[] wordBookEng = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'W', 'O', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Y', 'Z'};
     static String[] wordbook = new String[]{
             "Автовокзал", "Выносливый", "Разноречие", "Подлокотник", "Скворечник", "Комбинация", "Клавиатура",
             "Инкассатор", "Абстракция", "Программист", "Джава", "Бездельный", "Аппаратчик", "Дислокация",
@@ -20,7 +15,6 @@ public class Wordbook extends Launcher {
             "Балетмейстер", "Безрассудный", "Благозвучный", "Вещественный", "Группировать", "Гидротехника",
             "Единственный", "Жертвователь", "Коммуникация", "Мудрствовать", "Товарищество", "Финишировать"
     };
-
 
     protected static char[] getChars() {
         Random random = new Random();
