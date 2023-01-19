@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URI;
+import java.util.Arrays;
 
 /**
  * @author Evgeniy_Tyslevich
@@ -27,6 +29,10 @@ public class Check extends Launcher {
         if (error == 6) {
             theMainGallows.mainMapsSeven();
             System.out.println("КОНЕЦ ИГРЫ");
+            System.out.print("ЗАГАДАННОЕ СЛОВО БЫЛО: ");
+            for (char aChar : chars) {
+                System.out.print(aChar);
+            }
             Desktop.getDesktop().browse(URI.create("https://i.gifer.com/980W.gif"));
             System.exit(0);
         }
