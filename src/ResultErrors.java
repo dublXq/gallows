@@ -5,8 +5,14 @@
 public class ResultErrors extends Launcher {
 
     protected static void ResultErrorsMethod(boolean isFalse) {
-        if (!isFalse) {
-            error++;
+
+        if (Wordbook.checkWordEng) {
+            System.out.println("Переключите пожалуйста клавиатуру на кириллицу, и повторите еще раз:)");
+            checkWordEng = false;
+        } else {
+            if (!isFalse) {
+                error++;
+            }
         }
     }
 

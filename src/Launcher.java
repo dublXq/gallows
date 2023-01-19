@@ -22,6 +22,7 @@ public class Launcher {
     public static int TIMES_INT = chars.length;
     public static StringBuilder secondString = new StringBuilder();
     public static String s = "";
+    public static boolean checkWordEng;
 
     public static void main(String[] args) throws IOException {
 
@@ -39,9 +40,11 @@ public class Launcher {
         }
 
         System.out.print("Приветствую! Готовы сыграть в игру?\n1.Да\n2.Нет\nОтвет: ");
-        int f = new Scanner(System.in).nextInt();
-        if (f == 1){
+        int numbChoose = new Scanner(System.in).nextInt();
+        if (numbChoose == 1) {
+
             while (true) {
+
 
                 boolean isFalse = false;
                 System.out.print("Слово: " + s + "\n");
@@ -49,6 +52,13 @@ public class Launcher {
                 System.out.print("Буква: ");
 
                 firstNumb = scanner.next().toUpperCase().charAt(0);
+
+                for (int i = 0; i < Wordbook.wordBookEng.length; i++) {
+                    if (firstNumb == Wordbook.wordBookEng[i]) {
+                        System.out.println("Вы ввели латинскую букву.");
+                        checkWordEng = true;
+                    }
+                }
 
                 isFalse = DifferentActivity.isaBoolean(isFalse, firstNumb);
 
@@ -59,10 +69,11 @@ public class Launcher {
                 if (!s.contains("_")) {
                     System.out.println("ПОБЕДА! ПОЗДРАВЛЯЕМ!");
                     Desktop.getDesktop().browse(URI.create("https://i.gifer.com/9cND.gif"));
-                   return;
+                    return;
                 }
             }
-        } else if (f == 2) {
+
+        } else if (numbChoose == 2) {
             System.out.println("Чтобы начать игру, нажмите - 1");
             System.exit(1);
         } else {
